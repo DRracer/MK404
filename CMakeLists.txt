@@ -325,6 +325,8 @@ if (ENABLE_GCOV)
 	add_definitions(-DTEST_MODE)
 	set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 else()
+#    target_compile_options(MK404 PRIVATE -O2 -flto -mcpu=native -mtune=native)
+#	target_link_libraries(MK404 -flto)
 	set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE OFF)
 endif()
 

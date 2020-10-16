@@ -61,16 +61,28 @@ class PINDA:public BasePeripheral,public Scriptable, private IKeyClient {
 	void Reconfigure(float fX, float fY, XYCalMap map);
 
 	// so we can use initializer syntax later
+    static constexpr float m = 0.f;//1.5f;
 	using MBLMap_t = struct
 	{
-		float points[49] {0.04584,	0.07806,	0.10584,	0.12917,	0.14806,	0.1625, 	0.1725,
+#if 0
+        float points[49] {0.04584,	0.07806,	0.10584,	0.12917,	0.14806,	0.1625, 	0.1725,
         0.00973,	0.04031,	0.06306,	0.07797,	0.08503,	0.08426,	0.07565,
         -0.02055,	0.00834,	0.02682,	0.03491,	0.0326,	    0.01988,	-0.00324,
         -0.045,	    -0.01787,	-0.00287,	0,	        -0.00926,	-0.03064,	-0.06416,
         -0.06361,	-0.0383,	-0.02602,	-0.02676,	-0.04052,	-0.06731,	-0.10713,
         -0.07639,	-0.05296,	-0.04262,	-0.04537,	-0.0612,	-0.09012,	-0.13213,
         -0.08333,	-0.06185,	-0.05268,	-0.05583,	-0.07129,	-0.09907,	-0.13916};
-	};
+#else
+    float points[49] {
+    0, 0, 0, m, m, m, m,
+    0, 0, 0, m, m, m, m,
+    0, 0, 0, m, m, m, m,
+    0, 0, 0, m, m, m, m,
+    0, 0, 0, m, m, m, m,
+    0, 0, 0, m, m, m, m,
+    0, 0, 0, m, m, m, m};
+#endif
+    };
 
 	protected:
 		LineStatus ProcessAction(unsigned int iAct, const std::vector<std::string> &vArgs) override;

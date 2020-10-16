@@ -83,7 +83,7 @@ class GLPrint
 
 		// pre-allocation size for the vectors - saves a lot of CPU cycles
 		// when adding items into vectors (the vector will not get reallocated with every insertion)
-		static constexpr size_t VectorPrealoc = 2000000; // 2M items
+		static constexpr size_t VectorPrealoc = 20000000; // 2M items
 		static constexpr size_t VectorPrealoc3 = 3*VectorPrealoc; // 6M items
 
 		std::vector<int> m_ivStart, m_ivTStart;

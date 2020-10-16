@@ -324,6 +324,7 @@ void GLPrint::AddSegment()
 
 		Color3fv colW;
 		colorLerp(fNarrow, fWide, fExtRad/0.002, colW);
+                // colorLerp(fNarrow, fWide, fExtRad/0.0003, colW);
 		CrossProduct(fB,fA,{fCross.data(),3});
 		Normalize({fCross.data(),3});
 		auto fCrossRev = fCross;
